@@ -23,6 +23,9 @@ echo ""
 echo "starting sub finder " 
 subfinder -d $dom -v -o subfinder.$dom.txt 
 echo "sub finder finished its task"
+echo "starting asset finder " 
+  assetfinder -subs-only $dom | tee assetfinder.$dom.txt
+echo "asset finder completed its task "
 
 echo "sorting subdomains"
 echo *.txt | sort -u | subdomain.txt
